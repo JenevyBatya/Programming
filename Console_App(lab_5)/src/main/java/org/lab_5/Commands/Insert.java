@@ -33,4 +33,9 @@ public class Insert implements BaseCommand{
             organizationTable.put(organization.getId(), organization);
         }
     }
+
+    @Override
+    public void execute() {
+
+    }
 }

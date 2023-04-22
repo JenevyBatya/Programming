@@ -37,4 +37,8 @@ public class Update implements BaseCommand{
             System.out.println("Неправильный синтаксис команды. Укажите id организации, данные которой вы хотите обновить");
         }
     }
+    @Override
+    public void execute() {
+
+    }
 }

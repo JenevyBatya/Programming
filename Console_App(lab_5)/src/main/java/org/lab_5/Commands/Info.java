@@ -28,4 +28,8 @@ public class Info implements BaseCommand{
         System.out.println("Размер коллекции: " + organizationTable.size());
 
     }
+    @Override
+    public void execute() {
+
+    }
 }

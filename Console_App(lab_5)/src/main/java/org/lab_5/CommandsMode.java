@@ -42,4 +42,6 @@ public class CommandsMode {
         }
     }
 
+//    public void getCommandByName(String help) {
+//    }
 }

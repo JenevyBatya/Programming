@@ -12,4 +12,5 @@ public interface BaseCommand {
     public String getDescription();
     public void execute(Object... o) throws IOException;
 
+    void execute();
 }

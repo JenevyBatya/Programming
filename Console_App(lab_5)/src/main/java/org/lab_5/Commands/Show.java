@@ -30,4 +30,8 @@ public class Show implements BaseCommand{
             System.out.println("Коллекция в данный момент не содержит в себе объектов");
         }
     }
+    @Override
+    public void execute() {
+
+    }
 }

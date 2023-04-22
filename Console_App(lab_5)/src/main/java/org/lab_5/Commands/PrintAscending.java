@@ -44,4 +44,8 @@ public class PrintAscending implements BaseCommand{
 
         }
     }
+    @Override
+    public void execute() {
+
+    }
 }

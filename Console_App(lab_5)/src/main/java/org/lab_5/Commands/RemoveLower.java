@@ -46,4 +46,8 @@ public class RemoveLower implements BaseCommand {
             System.out.println("Было удалено " + counter + " organizations из коллекции");
         }
     }
+    @Override
+    public void execute() {
+
+    }
 }

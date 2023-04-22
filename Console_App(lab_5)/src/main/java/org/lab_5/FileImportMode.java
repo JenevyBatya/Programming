@@ -1,12 +1,8 @@
 package org.lab_5;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.lab_5.Models.Organization;
-import org.lab_5.Models.OrganizationType;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -17,7 +13,7 @@ public class FileImportMode {
     Organization[] listOfOrganization = new Organization[0];
     Checker checker = new Checker();
     Hashtable<Integer, Organization> organizationHashtable = new Hashtable<>();
-    public void importMode(String fileName){
+    public Hashtable<Integer, Organization> importMode(String fileName){
         while (true) {
             if (fileName.equals("/cancel")) {
                 break;
@@ -60,8 +56,8 @@ public class FileImportMode {
         } else {
             System.out.println(listOfOrganization.length - invalidValues + " organizations были успешно занесены в коллекцию и готовы к дальнейшей работе");
         }
-        CommandsMode commandsMode = new CommandsMode();
-        commandsMode.executeCommand(organizationHashtable);
+        return organizationHashtable;
+
     }
 }
 //    public Organization importMode(String fileName){

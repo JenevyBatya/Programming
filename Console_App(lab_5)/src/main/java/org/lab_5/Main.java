@@ -9,10 +9,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
+
         Scanner sc = new Scanner(System.in);
         FileImportMode fileImportMode = new FileImportMode();
         System.out.println("Введите полный путь до файла или /cancel для выхода из режима загрузки данных");
         String fileName = sc.nextLine();
-        fileImportMode.importMode(fileName);
+        CommandsMode commandsMode = new CommandsMode();
+        commandsMode.executeCommand(fileImportMode.importMode(fileName));
     }
 }

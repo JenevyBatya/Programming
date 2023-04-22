@@ -35,4 +35,8 @@ public class Help implements BaseCommand{
         }
 
     }
+    @Override
+    public void execute() {
+
+    }
 }

@@ -25,4 +25,8 @@ public class Clear implements BaseCommand{
         organizationTable.clear();
         System.out.println("Чистка коллекции завершена");
     }
+    @Override
+    public void execute() {
+
+    }
 }
