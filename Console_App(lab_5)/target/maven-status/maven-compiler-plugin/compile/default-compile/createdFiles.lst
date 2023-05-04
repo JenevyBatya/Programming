@@ -7,6 +7,7 @@ org\lab_5\Commands\ExecuteScript.class
 org\lab_5\Commands\Help.class
 org\lab_5\Models\Location.class
 org\lab_5\FileImportMode.class
+org\lab_5\SystemOutputStream.class
 org\lab_5\Commands\Update.class
 org\lab_5\Commands\ReplaceIfGreater.class
 org\lab_5\CancelMode.class

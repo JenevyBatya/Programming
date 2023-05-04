@@ -1,8 +1,11 @@
 package org.lab_5;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.lab_5.Models.Organization;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -22,10 +25,16 @@ public class FileImportMode {
                     File file = new File(fileName);
                     listOfOrganization = objectMapper.readValue(file, Organization[].class);
                     break;
-                } catch (IOException e) {
+                } catch (FileNotFoundException e) {
                     System.out.println("Файл не найден");
                     System.out.println("Введите полный путь до файла или /cancel для выхода из режима загрузки данных");
                     fileName = sc.nextLine();
+                } catch (StreamReadException e) {
+                    throw new RuntimeException(e);
+                } catch (DatabindException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
 

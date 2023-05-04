@@ -36,8 +36,5 @@ public class RemoveKey implements BaseCommand {
             System.out.println("Неправильный синтаксис команды. Укажите id организации, которую вы хотите удалить, после команды");
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

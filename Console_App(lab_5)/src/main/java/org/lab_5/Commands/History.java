@@ -29,8 +29,5 @@ public class History implements BaseCommand{
             System.out.println(command);
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

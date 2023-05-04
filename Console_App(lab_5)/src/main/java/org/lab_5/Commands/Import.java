@@ -34,8 +34,5 @@ public class Import implements BaseCommand{
             }
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

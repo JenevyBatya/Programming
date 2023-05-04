@@ -66,8 +66,5 @@ public class ExecuteScript implements BaseCommand{
             System.out.println("Неправильный синтаксис команды. Укажите полный путь до файла после команды");
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

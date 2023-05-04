@@ -33,8 +33,5 @@ public class MinByType implements BaseCommand{
             System.out.println("В данный момент в коллекции отсутствуют организации с типом COMMERCIAL");
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

@@ -26,8 +26,4 @@ public class Exit implements BaseCommand{
         System.exit(0);
 
     }
-    @Override
-    public void execute() {
-
-    }
 }

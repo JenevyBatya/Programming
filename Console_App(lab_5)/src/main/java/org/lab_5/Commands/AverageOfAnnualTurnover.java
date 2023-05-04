@@ -31,8 +31,5 @@ public class AverageOfAnnualTurnover implements BaseCommand{
         System.out.println(averageOfAnnualTurnover);;
 
     }
-    @Override
-    public void execute() {
 
-    }
 }

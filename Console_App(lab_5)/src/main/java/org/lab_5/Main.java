@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 //Путь для сохранения: C:\Users\theal\IdeaProjects\Lab_5.1\src\output.json
-//Путь для файла с объектами: C:\Users\theal\IdeaProjects\Lab_5.1\src\data.json
+//Путь для файла с объектамиC:\Users\theal\IdeaProjects\Lab_5.1\src\data.json
 //Путь до скрипта: C:\Users\theal\IdeaProjects\Lab_5.1\src\script.txt
 
 public class Main {

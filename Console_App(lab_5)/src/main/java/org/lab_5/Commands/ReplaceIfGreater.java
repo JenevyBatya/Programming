@@ -80,8 +80,5 @@ public class ReplaceIfGreater implements BaseCommand{
         }
 
     }
-    @Override
-    public void execute() {
 
-    }
 }

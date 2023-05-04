@@ -40,6 +40,7 @@ public class CommandsMode {
                 break;
             }
         }
+
     }
 
 //    public void getCommandByName(String help) {

@@ -21,7 +21,7 @@ public class PrintAscending implements BaseCommand{
     }
     public void execute(Object... o) {
 
-        Comparator<Organization> sortByAnnualTurnover = new Comparator<Organization>() {
+        Comparator<Organization> sortByAnnualTurnover = new Comparator<>() {
             public int compare(Organization o1, Organization o2) {
                 Double o1AnnualTurnover = o1.getAnnualTurnover();
                 Double o2AnnualTurnover = o2.getAnnualTurnover();
@@ -31,7 +31,7 @@ public class PrintAscending implements BaseCommand{
         Set<Map.Entry<Integer, Organization>> set = organizationTable.entrySet();
 
         ArrayList<Map.Entry<Integer, Organization>> arlist = new ArrayList<>(set);
-        Collections.sort(arlist, new Comparator<Map.Entry<Integer, Organization>>() {
+        Collections.sort(arlist, new Comparator<>() {
             public int compare(Map.Entry<Integer, Organization> o1, Map.Entry<Integer, Organization> o2) {
                 return sortByAnnualTurnover.compare(o1.getValue(), o2.getValue());
             }
@@ -44,8 +44,5 @@ public class PrintAscending implements BaseCommand{
 
         }
     }
-    @Override
-    public void execute() {
 
-    }
 }

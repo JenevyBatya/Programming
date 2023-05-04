@@ -15,6 +15,7 @@ public class Help implements BaseCommand{
     private String description = name + ": вывод справки по доступным командам для исполнения\n";
 
 
+
     public static String getName() {
         return name;
     }
@@ -33,10 +34,6 @@ public class Help implements BaseCommand{
             if (command.equals("import")){continue;}
             System.out.println(commandHashtable.get(command).getDescription());
         }
-
-    }
-    @Override
-    public void execute() {
 
     }
 }

@@ -34,8 +34,5 @@ public class Insert implements BaseCommand{
         }
     }
 
-    @Override
-    public void execute() {
 
-    }
 }
