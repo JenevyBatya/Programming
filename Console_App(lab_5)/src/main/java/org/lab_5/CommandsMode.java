@@ -17,15 +17,19 @@ public class CommandsMode {
         CommandsManager cm = new CommandsManager(organizationHashtable, history);
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
+        ConsoleLog consoleLog = new ConsoleLog();
 
         while(true) {
             try {
-                System.out.println("Введите команду");
+                consoleLog.consoleResp("Введите команду");
                 String[] command = sc.nextLine().split(" ");
                 if (command.length > 1) {
-                    commandsMap.get(command[0]).execute(command[1]);
+                    //TODO
+                    CommandExecute commandExecute = commandsMap.get(command[0]).execute(command[1]);
+                    consoleLog.consoleRespCommand(commandExecute);
+
                 } else {
-                    commandsMap.get(command[0]).execute();
+                    consoleLog.consoleRespCommand(commandsMap.get(command[0]).execute());
                 }
                 if(history.size()<15){
                     history.add(command[0]);
@@ -34,7 +38,7 @@ public class CommandsMode {
                     history.add(command[0]);
                 }
             }catch (NullPointerException | IOException e){
-                System.out.println("Неизвестная команда. Для справки по всем доступным командам пропишите help");
+                consoleLog.consoleResp("Неизвестная команда. Для справки по всем доступным командам пропишите help");
             }
             catch (NoSuchElementException e){
                 break;
@@ -43,6 +47,4 @@ public class CommandsMode {
 
     }
 
-//    public void getCommandByName(String help) {
-//    }
 }
