@@ -3,6 +3,7 @@ package org.lab_5.Commands;
 import org.lab_5.CommandExecute;
 import org.lab_5.CommandsManager;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.util.Hashtable;
 
@@ -22,6 +23,7 @@ public class Help implements BaseCommand {
     public static String getName() {
         return name;
     }
+
     private String response = "";
 
     @Override
@@ -30,7 +32,7 @@ public class Help implements BaseCommand {
     }
 
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         CommandsManager commandsManager = new CommandsManager(organizationTable, null);
         commandsManager.collectionOfCommands();
 
@@ -43,6 +45,6 @@ public class Help implements BaseCommand {
             response += commandHashtable.get(command).getDescription();
         }
 
-        return new CommandExecute(response,true);
+        return new CommandExecute(response, true);
     }
 }

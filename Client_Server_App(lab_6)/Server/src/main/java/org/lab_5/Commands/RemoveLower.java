@@ -2,6 +2,7 @@ package org.lab_5.Commands;
 
 import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -28,11 +29,11 @@ public class RemoveLower implements BaseCommand {
     private String response;
 
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         int counter = 0;
         try {
             List<Integer> keysList = new ArrayList<>(organizationTable.keySet());
-            int id = Integer.parseInt(o[0].toString());
+            int id = Integer.parseInt(o.getArg());
             for (int removeKey : keysList) {
                 if (removeKey < id) {
                     organizationTable.remove(removeKey);

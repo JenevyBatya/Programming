@@ -4,6 +4,7 @@ import org.lab_5.CommandExecute;
 import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -12,10 +13,9 @@ public class History implements BaseCommand{
 
     private Hashtable<Integer, Organization> organizationTable;
     ConsoleLog consoleLog = new ConsoleLog();
-    ArrayList<String> history = new ArrayList<>();
-    public History(Hashtable organizationTable, ArrayList<String> history){
+
+    public History(Hashtable organizationTable){
         this.organizationTable = organizationTable;
-        this.history=history;
     }
     private static String name = "history";
 
@@ -28,11 +28,10 @@ public class History implements BaseCommand{
         return description;
     }
 
-    public CommandExecute execute(Object... o) {
-        for(String command: history){
-            response+=command+"\n";
-        }
-        return new CommandExecute(response,true);
+    @Override
+    public CommandExecute execute(Object... o) throws IOException {
+        return new CommandExecute(null,true);
     }
+
 
 }

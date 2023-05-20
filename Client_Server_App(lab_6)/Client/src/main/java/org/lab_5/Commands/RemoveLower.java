@@ -29,25 +29,16 @@ public class RemoveLower implements BaseCommand {
 
 
     public CommandExecute execute(Object... o) {
-        int counter = 0;
         try {
-            List<Integer> keysList = new ArrayList<>(organizationTable.keySet());
+
             int id = Integer.parseInt(o[0].toString());
-            for (int removeKey : keysList) {
-                if (removeKey < id) {
-                    organizationTable.remove(removeKey);
-                    counter++;
-                }
-            }
+        }catch (NumberFormatException e){
+            return new CommandExecute("Неправильный формат id",false);
         }catch (ArrayIndexOutOfBoundsException e){
             return new CommandExecute("Неправильный синтаксис команды. Укажите id, при котором организации, имеющие id ниже заданного, будут удалены из коллекции",false);
         }
-        if (counter==1){
-            response="Была удалена 1 organization из коллекции";
-        }else{
-            response="Было удалено " + counter + " organizations из коллекции";
-        }
-        return new CommandExecute(response,true);
+
+        return new CommandExecute(name,true);
     }
 
 }

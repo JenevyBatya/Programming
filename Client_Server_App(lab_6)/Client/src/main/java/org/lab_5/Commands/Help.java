@@ -31,18 +31,8 @@ public class Help implements BaseCommand {
 
 
     public CommandExecute execute(Object... o) {
-        CommandsManager commandsManager = new CommandsManager(organizationTable, null);
-        commandsManager.collectionOfCommands();
 
 
-        Hashtable<String, BaseCommand> commandHashtable = commandsManager.getCommandsTable();
-        for (String command : commandHashtable.keySet()) {
-            if (command.equals("import")) {
-                continue;
-            }
-            response += commandHashtable.get(command).getDescription();
-        }
-
-        return new CommandExecute(response,true);
+        return new CommandExecute(null,true);
     }
 }

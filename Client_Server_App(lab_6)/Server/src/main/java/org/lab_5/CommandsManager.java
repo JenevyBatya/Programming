@@ -37,7 +37,7 @@ public class CommandsManager {
         commandsTable.put(RemoveLower.getName(), new RemoveLower(organizationTable));
         commandsTable.put(ReplaceIfGreater.getName(), new ReplaceIfGreater(organizationTable));
         commandsTable.put(Update.getName(), new Update(organizationTable));
-        commandsTable.put(Import.getName(), new Import(organizationTable));
+//        commandsTable.put(Import.getName(), new Import(organizationTable));
     }
     public Hashtable getCommandsTable(){
         return commandsTable;

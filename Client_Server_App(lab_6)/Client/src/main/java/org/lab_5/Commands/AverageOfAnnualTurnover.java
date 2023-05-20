@@ -27,15 +27,8 @@ public class AverageOfAnnualTurnover implements BaseCommand {
 
 
     public CommandExecute execute(Object... o) {
-        double sumOfAnnualTurnover = 0;
-        for (Organization organization : organizationTable.values()) {
-            sumOfAnnualTurnover += organization.getAnnualTurnover();
-        }
-        double averageOfAnnualTurnover = sumOfAnnualTurnover / organizationTable.size();
 
-//        System.out.println(averageOfAnnualTurnover);
-
-        return new CommandExecute(String.valueOf(averageOfAnnualTurnover), true);
+        return new CommandExecute(null, true);
     }
 
 }

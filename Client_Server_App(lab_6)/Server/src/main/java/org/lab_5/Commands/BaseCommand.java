@@ -2,6 +2,7 @@ package org.lab_5.Commands;
 
 
 import org.lab_5.CommandExecute;
+import org.lab_5.Request;
 
 import java.io.IOException;
 
@@ -12,7 +13,7 @@ public interface BaseCommand {
 // }
 
     public String getDescription();
-    public CommandExecute execute(Object... o) throws IOException;
+    public CommandExecute execute(Request o) throws IOException;
 
 
 }

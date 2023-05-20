@@ -24,14 +24,8 @@ public class Show implements BaseCommand{
     }
 
     public CommandExecute execute(Object... o) {
-        if (organizationTable.size() != 0) {
-            for (Organization organization : organizationTable.values()) {
-                response+="id_" + organization.getId() + " " + organization.getName() + ", Annual turnover: " + organization.getAnnualTurnover() + ", Organization type: " + organization.getType().toString()+"\n";
-            }
-        }else{
-            return new CommandExecute("Коллекция в данный момент не содержит в себе объектов",false);
-        }
-        return new CommandExecute(response,true);
+
+        return new CommandExecute(null,true);
     }
 
 }

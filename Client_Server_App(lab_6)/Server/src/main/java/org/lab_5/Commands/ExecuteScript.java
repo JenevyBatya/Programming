@@ -4,6 +4,7 @@ import org.lab_5.CommandExecute;
 import org.lab_5.CommandsManager;
 import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -33,13 +34,13 @@ public class ExecuteScript implements BaseCommand{
     ConsoleLog consoleLog = new ConsoleLog();
     private String response = "";
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         CommandsManager cm = new CommandsManager(organizationTable, history);
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
-        commandsMap.remove("execute_script");
+        //TODO
         try {
-            String file = o[0].toString();
+            String file = o.getArg();
             List<String> lines = Files.readAllLines(Paths.get(file), StandardCharsets.UTF_8);
             String[] arr = lines.toArray(new String[0]);
             String[] command;
@@ -49,10 +50,10 @@ public class ExecuteScript implements BaseCommand{
                 try {
                     if (command.length > 1) {
                         response+=command[0] + " " + command[1]+"\n";
-                        response+=commandsMap.get(command[0]).execute(command[1]).getResponse()+"\n";
+                        response+=commandsMap.get(command[0]).execute(new Request(command[1])).getResponse()+"\n";
                     } else {
                         response+=command[0]+"\n";
-                        response+=commandsMap.get(command[0]).execute().getResponse()+"\n";
+                        response+=commandsMap.get(command[0]).execute(null).getResponse()+"\n";
                     }
                     if (history.size() < 15) {
                         history.add(command[0]);

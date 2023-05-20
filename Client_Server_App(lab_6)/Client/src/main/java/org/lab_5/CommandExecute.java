@@ -1,11 +1,16 @@
 package org.lab_5;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CommandExecute {
     private String response;
     private boolean success;
-    public CommandExecute(String response, boolean success) {
-        this.response=response;
-        this.success=success;
+
+    @JsonCreator
+    public CommandExecute(@JsonProperty("response") String response, @JsonProperty("success") boolean success) {
+        this.response = response;
+        this.success = success;
     }
 
     public String getResponse() {

@@ -2,11 +2,12 @@ package org.lab_5.Commands;
 
 import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.util.Hashtable;
 
 public class Show implements BaseCommand{
-    private String response = "";
+
 
     private Hashtable<Integer, Organization> organizationTable;
     public Show(Hashtable organizationTable){
@@ -23,7 +24,8 @@ public class Show implements BaseCommand{
         return description;
     }
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
+       String response = "";
         if (organizationTable.size() != 0) {
             for (Organization organization : organizationTable.values()) {
                 response+="id_" + organization.getId() + " " + organization.getName() + ", Annual turnover: " + organization.getAnnualTurnover() + ", Organization type: " + organization.getType().toString()+"\n";

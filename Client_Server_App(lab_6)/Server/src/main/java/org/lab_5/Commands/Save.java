@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,9 +32,9 @@ public class Save implements BaseCommand{
     }
 
     @Override
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         try {
-            String file = o[0].toString();
+            String file = o.getCommand();
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.registerModule(new JavaTimeModule());
             ObjectWriter writer = objectMapper.writer(new DefaultPrettyPrinter());

@@ -27,11 +27,7 @@ public class Info implements BaseCommand{
     }
 
     public CommandExecute execute(Object... o) {
-        response="Тип коллекции: " + organizationTable.getClass().getName()+"\n";
-        response+="Размер коллекции: " + organizationTable.size();
-
-
-        return new CommandExecute(response,true);
+        return new CommandExecute(null,true);
     }
 
 }

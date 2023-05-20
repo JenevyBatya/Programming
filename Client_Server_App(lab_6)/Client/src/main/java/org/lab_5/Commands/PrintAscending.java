@@ -23,28 +23,7 @@ public class PrintAscending implements BaseCommand{
     private String response = "";
     public CommandExecute execute(Object... o) {
 
-        Comparator<Organization> sortByAnnualTurnover = new Comparator<>() {
-            public int compare(Organization o1, Organization o2) {
-                Double o1AnnualTurnover = o1.getAnnualTurnover();
-                Double o2AnnualTurnover = o2.getAnnualTurnover();
-                return Double.compare(o1AnnualTurnover, o2AnnualTurnover);
-            }
-        };
-        Set<Map.Entry<Integer, Organization>> set = organizationTable.entrySet();
-
-        ArrayList<Map.Entry<Integer, Organization>> arlist = new ArrayList<>(set);
-        Collections.sort(arlist, new Comparator<>() {
-            public int compare(Map.Entry<Integer, Organization> o1, Map.Entry<Integer, Organization> o2) {
-                return sortByAnnualTurnover.compare(o1.getValue(), o2.getValue());
-            }
-        });
-        Hashtable<Integer, Organization> hashtable = new Hashtable<>();
-        for (Map.Entry<Integer, Organization> entry : arlist) {
-            hashtable.put(entry.getKey(), entry.getValue());
-            response+="id_" + entry.getValue().getId() + " " + entry.getValue().getName() + ", Annual turnover: " + entry.getValue().getAnnualTurnover() + ", Organization type: " + entry.getValue().getType().toString()+"\n";
-
-        }
-        return new CommandExecute(response,true);
+        return new CommandExecute(null,true);
     }
 
 }

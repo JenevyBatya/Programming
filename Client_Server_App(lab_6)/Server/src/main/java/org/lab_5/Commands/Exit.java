@@ -2,6 +2,7 @@ package org.lab_5.Commands;
 
 import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.util.Hashtable;
 
@@ -23,9 +24,7 @@ public class Exit implements BaseCommand{
     }
 
     @Override
-    public CommandExecute execute(Object... o) {
-        System.exit(0);
-
+    public CommandExecute execute(Request o) {
         return new CommandExecute(null,true);
     }
 }

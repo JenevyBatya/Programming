@@ -1,4 +1,5 @@
 package org.lab_5;
+
 import java.net.ConnectException;
 import java.util.Scanner;
 
@@ -16,47 +17,31 @@ import java.net.Socket;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) throws InterruptedException {
+        ConsoleLog consoleLog = new ConsoleLog();
+        boolean mode = true;
         while (true) {
-            try {
-                // Создаем клиентский сокет и подключаемся к серверу
-                Socket socket = new Socket("localhost", 1234);
-                System.out.println("Connected to server at localhost:1234");
+            if (mode) {
+                try {
+                    // Создаем клиентский сокет и подключаемся к серверу
+                    Socket socket = new Socket("localhost", 1234);
+                    consoleLog.consoleResp("Подключении е к серверу localhost:1234");
 
-                // Получаем входной и выходной потоки данных для обмена сообщениями с сервером
-                BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+                    // Получаем входной и выходной потоки данных для обмена сообщениями с сервером
+                    BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+                    CommandsMode commandsMode = new CommandsMode(socket);
+                    commandsMode.executeCommand(input, output);
+                    socket.close();
+                    mode = false;
 
-                // Отправляем сообщение на сервер и читаем ответ
-                output.println("Hello from client!");
-                String response = input.readLine();
-                System.out.println("Received response from server: " + response);
-                output.println("Hello from client!");
-                output.println("Hello from client!");
-
-                // Закрываем соединение
-//            socket.close();
-            } catch (IOException e) {
-                System.out.println("Client exception: " + e.getMessage());
-                System.out.println("В данный момент сервер недоступен для взаимодействия");
-                System.out.println("Вы можете повторить попытку подключения, введя команду /retry, или покинуть сессию");
-                String answer = sc.nextLine();
-//            e.printStackTrace();
+                } catch (IOException e) {
+                    consoleLog.consoleResp("Client exception: " + e.getMessage());
+                    consoleLog.consoleResp("В данный момент сервер недоступен для взаимодействия. Повторная попытка подключения через 10 секунд");
+                    Thread.sleep(10000);
+                }
             }
         }
     }
 }
-
-//public class Main {
-//    public static void main(String[] args){
-//        ConsoleLog consoleLog = new ConsoleLog();
-//
-//        Scanner sc = new Scanner(System.in);
-//        FileImportMode fileImportMode = new FileImportMode();
-//        consoleLog.consoleResp("Введите полный путь до файла или /cancel для выхода из режима загрузки данных");
-//        String fileName = sc.nextLine();
-//        CommandsMode commandsMode = new CommandsMode();
-//        commandsMode.executeCommand(fileImportMode.importMode(fileName));
-//    }
-//}

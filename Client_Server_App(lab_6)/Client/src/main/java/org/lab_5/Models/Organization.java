@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class Organization {
-    private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+//    private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -26,9 +26,9 @@ public class Organization {
         return name;
     }
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public LocalDate getCreationDate() {
         return creationDate;
@@ -65,7 +65,7 @@ public class Organization {
     }
     @JsonCreator
     public Organization(
-            @JsonProperty("id") int id,
+//            @JsonProperty("id") int id,
             @JsonProperty("name") String name,
             @JsonProperty("coordinates") Coordinates coordinates,
             @JsonProperty("creationDate") java.time.LocalDate creationDate,
@@ -74,7 +74,7 @@ public class Organization {
             @JsonProperty("employeeCount") Integer employeesCount,
             @JsonProperty("type") OrganizationType type,
             @JsonProperty("postalAddress") Address postalAddress) {
-        this.id = id;
+//        this.id = id;
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;

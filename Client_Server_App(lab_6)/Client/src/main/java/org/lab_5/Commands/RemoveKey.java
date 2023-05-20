@@ -27,12 +27,10 @@ public class RemoveKey implements BaseCommand {
     public CommandExecute execute(Object... o) {
         try {
             int id = Integer.parseInt(o[0].toString());
-            if (organizationTable.containsKey(id)) {
-                organizationTable.remove(id);
-                return new CommandExecute("Организация с id_" + id + " была успешно удалена из реестра",true);
-            } else {
-                return new CommandExecute("Организации с id_" + id + " не существует",false);
-            }
+            return new CommandExecute(name,true);
+        }catch (NumberFormatException e){
+            return new CommandExecute("Неправильный формат id",false);
+
         }catch (ArrayIndexOutOfBoundsException e){
             return new CommandExecute("Неправильный синтаксис команды. Укажите id организации, которую вы хотите удалить, после команды",false);
         }

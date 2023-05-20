@@ -4,6 +4,7 @@ import org.lab_5.CommandExecute;
 import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
 import org.lab_5.Models.OrganizationType;
+import org.lab_5.Request;
 
 import java.util.Hashtable;
 
@@ -24,7 +25,7 @@ public class MinByType implements BaseCommand{
         return description;
     }
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         int counter = 0;
         for(Organization organization: organizationTable.values()){
             if(organization.getType().equals(OrganizationType.COMMERCIAL)){

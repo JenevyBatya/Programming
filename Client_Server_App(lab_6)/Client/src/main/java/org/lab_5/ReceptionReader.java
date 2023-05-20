@@ -1,0 +1,14 @@
+package org.lab_5;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
+public class ReceptionReader {
+    ObjectMapper objectMapper = new ObjectMapper();
+    public CommandExecute read(String inputStream) throws IOException {
+        System.out.println(inputStream);
+        System.out.println(objectMapper.readValue(inputStream, CommandExecute.class));
+        return objectMapper.readValue(inputStream, CommandExecute.class);
+    }
+}

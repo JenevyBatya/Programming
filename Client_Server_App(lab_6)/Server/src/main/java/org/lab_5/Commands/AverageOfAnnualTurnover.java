@@ -2,6 +2,7 @@ package org.lab_5.Commands;
 
 import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 
 import java.util.Hashtable;
@@ -26,7 +27,7 @@ public class AverageOfAnnualTurnover implements BaseCommand {
     }
 
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         double sumOfAnnualTurnover = 0;
         for (Organization organization : organizationTable.values()) {
             sumOfAnnualTurnover += organization.getAnnualTurnover();

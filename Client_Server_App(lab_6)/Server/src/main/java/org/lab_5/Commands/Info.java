@@ -3,6 +3,7 @@ package org.lab_5.Commands;
 import org.lab_5.CommandExecute;
 import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
+import org.lab_5.Request;
 
 import java.util.Hashtable;
 
@@ -26,7 +27,7 @@ public class Info implements BaseCommand{
         return description;
     }
 
-    public CommandExecute execute(Object... o) {
+    public CommandExecute execute(Request o) {
         response="Тип коллекции: " + organizationTable.getClass().getName()+"\n";
         response+="Размер коллекции: " + organizationTable.size();
 

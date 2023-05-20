@@ -23,10 +23,8 @@ public class Clear implements BaseCommand{
     }
 
     public CommandExecute execute(Object... o) {
-        CommandExecute commandExecute;
-        organizationTable.clear();
-//        System.out.println("Чистка коллекции завершена");
-        return new CommandExecute("Чистка коллекции завершена",true);
+
+        return new CommandExecute(null,true);
     }
 
 }

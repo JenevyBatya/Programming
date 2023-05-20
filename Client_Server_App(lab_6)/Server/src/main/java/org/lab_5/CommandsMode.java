@@ -1,9 +1,12 @@
 package org.lab_5;
 
 import org.lab_5.Commands.BaseCommand;
+import org.lab_5.Commands.Exit;
 import org.lab_5.Models.Organization;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.NoSuchElementException;
@@ -14,38 +17,50 @@ public class CommandsMode {
     ArrayList<String> history = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
-    public void executeCommand(Hashtable<Integer, Organization> organizationHashtable){
+    public void executeCommand(Hashtable<Integer, Organization> organizationHashtable, BufferedReader input, PrintWriter output) {
         CommandsManager cm = new CommandsManager(organizationHashtable, history);
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
         ConsoleLog consoleLog = new ConsoleLog();
+        RequestReader requestReader = new RequestReader();
+        String command, arg, data;
+        RequestAnswer requestAnswer = new RequestAnswer();
 
-        while(true) {
+        while (true) {
             try {
-                consoleLog.consoleResp("Введите команду");
-                String[] command = sc.nextLine().split(" ");
-                if (command.length > 1) {
-                    //TODO
-                    CommandExecute commandExecute = commandsMap.get(command[0]).execute(command[1]);
-                    consoleLog.consoleRespCommand(commandExecute);
 
+                String message = input.readLine();
+                CommandExecute commandExecute;
+
+                Request request = requestReader.read(message);
+                System.out.println("Received message from client: " + request.getCommand() + "\n"
+                        + "Id: " + request.getArg() + "\n"
+                        + "data: " + request.getData());
+                command = request.getCommand();
+                if(command.equals(Exit.getName())){
+                    commandExecute = commandsMap.get("save").execute(new Request("C:\\Users\\theal\\IdeaProjects\\Lab_5.1\\src\\output.json"));
+                    output.println(requestAnswer.sendPackage(commandExecute));
+                    break;
+                }else {
+                    commandExecute = commandsMap.get(command).execute(request);
+                }
+                output.println(requestAnswer.sendPackage(commandExecute));
+
+                if (history.size() < 15) {
+                    history.add(command);
                 } else {
-                    consoleLog.consoleRespCommand(commandsMap.get(command[0]).execute());
-                }
-                if(history.size()<15){
-                    history.add(command[0]);
-                }else{
                     history.remove(0);
-                    history.add(command[0]);
+                    history.add(command);
                 }
-            }catch (NullPointerException | IOException e){
-                consoleLog.consoleResp("Неизвестная команда. Для справки по всем доступным командам пропишите help");
-            }
-            catch (NoSuchElementException e){
+
+            } catch (NoSuchElementException e) {
                 break;
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
+
         }
 
     }
-
 }
