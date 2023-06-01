@@ -1,0 +1,108 @@
+[	{
+		"id": 123,
+		"name": "Грегори и сыновья",
+		"coordinates": {
+      "x": 1000,
+      "y": 20.0
+    },
+		 "creationDate": "2022-05-10",
+		 
+		 "fullName": "Грегори и сыновья Адама",
+		 "employeesCount": 3,
+		 "type": "PUBLIC",
+		 "postalAddress": {
+		 	"street": "Проспект Грегори Хауса",
+		 	"town": {
+		 		"x": 0,
+		 		"y": 0,
+		 		"z": 0
+		 	}
+		 }
+	},
+	{
+		"id": 125,
+		"name": "Грегори и сыновья",
+		"coordinates": {
+      "x": 700,
+      "y": 20.0
+    },
+		 "creationDate": "2022-05-10",
+		 "annualTurnover": 250000,
+		 "fullName": "Грегори и сыновья Адама",
+		 "employeesCount": 3,
+		 "type": "COMMERCIAL",
+		 "postalAddress": {
+		 	"street": "Проспект Грегори Хауса",
+		 	"town": {
+		 		"x": 786,
+		 		"y": 345345,
+		 		"z": -67
+		 	}
+		 }
+	},
+		{
+		"id": 4,
+		"name": "Толстолапики",
+		"coordinates": {
+      "x": 700,
+      "y": 20.0
+    },
+		 "creationDate": "2022-05-10",
+		 "annualTurnover": 250000,
+		 "employeesCount": 5,
+		 "type": "COMMERCIAL",
+		 "postalAddress": {
+		 	"street": "Проспект Добавки",
+		 	"town": {
+		 		"x": -56543,
+		 		"y": -123,
+		 		"z": -122
+		 	}
+		 }
+	},
+		{
+		"id": 66,
+		"name": "Толстопапики",
+		"coordinates": {
+      "x": 700,
+      "y": -777
+    },
+		 "creationDate": "2022-05-10",
+		 "annualTurnover": 66666666,
+		 "fullName": "Толстопапики Всея Руси",
+		 "employeesCount": 3,
+		 "type": "GOVERNMENT",
+		 "postalAddress": {
+		 	"street": "Проспект Поставления свечки",
+		 	"town": {
+		 		"x": 1,
+		 		"y": 2,
+		 		"z": 3
+		 	}
+		 }
+	},
+		{
+		"id": 71,
+		"name": "Улыбаки",
+		"coordinates": {
+      "x": 4354,
+      "y": 420
+    },
+		 "creationDate": "2022-05-10",
+		 "annualTurnover": 12345,
+		 "employeesCount": 46,
+		 "type": "PRIVATE_LIMITED_COMPANY",
+		 "postalAddress": {
+		 	"street": "Проспект Ты солнышко",
+		 	"town": {
+		 		"x": -6,
+		 		"y": 6,
+		 		"z": -6
+		 	}
+		 }
+	}
+
+
+
+
+]
