@@ -4,11 +4,12 @@ import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.*;
 
 public class PrintAscending implements BaseCommand{
     private Hashtable<Integer, Organization> organizationTable;;
-    public PrintAscending(Hashtable organizationTable){
+    public PrintAscending(Hashtable organizationTable, Connection connection){
         this.organizationTable = organizationTable;
     }
     private static String name = "print_ascending";
@@ -40,6 +41,9 @@ public class PrintAscending implements BaseCommand{
 
         }
         return new CommandExecute(response,true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }

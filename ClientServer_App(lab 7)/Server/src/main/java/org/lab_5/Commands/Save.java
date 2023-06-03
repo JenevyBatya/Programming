@@ -11,12 +11,13 @@ import org.lab_5.Request;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class Save implements BaseCommand{
 
     private Hashtable<Integer, Organization> organizationTable;;
-    public Save(Hashtable organizationTable){
+    public Save(Hashtable organizationTable, Connection connection){
         this.organizationTable = organizationTable;
     }
     private static String name = "save";
@@ -51,6 +52,9 @@ public class Save implements BaseCommand{
             return new CommandExecute("Неправильный синтаксис команды. Укажите полный путь до файла после команды",false);
         }
         return new CommandExecute(response,true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }

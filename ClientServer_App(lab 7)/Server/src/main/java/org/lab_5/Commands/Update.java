@@ -7,14 +7,25 @@ import org.lab_5.OrganizationRegistration;
 import org.lab_5.Request;
 import org.lab_5.Updater;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Hashtable;
 
 public class Update implements BaseCommand {
     private Hashtable<Integer, Organization> organizationTable;
+    private Integer userId;
+    private Connection connection;
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
     ;
 
-    public Update(Hashtable organizationTable) {
+    public Update(Hashtable organizationTable, Connection connection) {
         this.organizationTable = organizationTable;
+        this.connection=connection;
     }
 
     private static String name = "update";
@@ -31,7 +42,7 @@ public class Update implements BaseCommand {
 
     CommandExecute commandExecute;
 
-    public CommandExecute execute(Request o) {
+    public CommandExecute execute(Request o) throws SQLException {
         String name; //Поле не может быть null, Строка не может быть пустой
         Coordinates coordinates; //Поле не может быть null
         int xCoordinates;
@@ -45,25 +56,47 @@ public class Update implements BaseCommand {
         Long xLocation;
         Float yLocation;
         float zLocation;
+
         try {
             //TODO
             int id = Integer.parseInt(o.getArg());
             String[] data = o.getData().split(" ");
-            if (organizationTable.containsKey(id)) {
+            String sql = "select * from organization where (user_id=? and id=?)";
+            PreparedStatement whatUpdate = connection.prepareStatement(sql);
+            whatUpdate.setInt(1, userId);
+            whatUpdate.setInt(2, id);
+            ResultSet resultSet = whatUpdate.executeQuery();
+            if (resultSet.next()) {
                 Updater updater = new Updater();
 
-                name = (String) updater.compare(data[0], organizationTable.get(id).getName());
-                xCoordinates = (int) updater.compare(Integer.parseInt(data[1]), organizationTable.get(id).getCoordinates().getX());
-                yCoordinates = (Long) updater.compare(Long.parseLong(data[2]), organizationTable.get(id).getCoordinates().getY());
-                annualTurnover = (Double) updater.compare(Double.parseDouble(data[3]), organizationTable.get(id).getAnnualTurnover());
-                creationDate = organizationTable.get(id).getCreationDate();
-                fullName = (String) updater.compare(data[4], organizationTable.get(id).getFullName());
-                employeesCount = (Integer) updater.compare(Integer.parseInt(data[5]), organizationTable.get(id).getEmployeesCount());
-                type = (String) updater.compare(data[6], organizationTable.get(id).getType().toString());
-                street = (String) updater.compare(data[7], organizationTable.get(id).getPostalAddress().getStreet());
-                xLocation = (Long) updater.compare(Long.parseLong(data[8]), organizationTable.get(id).getPostalAddress().getTown().getX());
-                yLocation = (Float) updater.compare(Float.parseFloat(data[9]), organizationTable.get(id).getPostalAddress().getTown().getY());
-                zLocation = (float) updater.compare(Float.parseFloat(data[10]), organizationTable.get(id).getPostalAddress().getTown().getZ());
+                name = (String) updater.compare(data[0], resultSet.getString("name"));
+                xCoordinates = (int) updater.compare(Integer.parseInt(data[1]), resultSet.getInt("coordinateX"));
+                yCoordinates = (Long) updater.compare(Long.parseLong(data[2]), resultSet.getLong("coordinateY"));
+                annualTurnover = (Double) updater.compare(Double.parseDouble(data[3]), resultSet.getDouble("annualTurnover"));
+                creationDate = resultSet.getDate("creationDate").toLocalDate();
+                fullName = (String) updater.compare(data[4], resultSet.getString("fullName"));
+                employeesCount = (Integer) updater.compare(Integer.parseInt(data[5]), resultSet.getInt("employeesCount"));
+                type = (String) updater.compare(data[6], resultSet.getString("type"));
+                street = (String) updater.compare(data[7], resultSet.getString("street"));
+                xLocation = (Long) updater.compare(Long.parseLong(data[8]), resultSet.getLong("locationX"));
+                yLocation = (Float) updater.compare(Float.parseFloat(data[9]), resultSet.getFloat("locationY"));
+                zLocation = (float) updater.compare(Float.parseFloat(data[10]), resultSet.getFloat("locationZ"));
+                String sql1 = "update organization set name=?, coordinateX=?, coordinateY=?, annualTurnover=?," +
+                        " fullName=?, employeesCount=?, type=?, street=?, locationX=?, locationY=?, locationZ=? where id=?";
+                PreparedStatement update = connection.prepareStatement(sql1);
+                update.setString(1, name);
+                update.setInt(2, xCoordinates);
+                update.setLong(3, yCoordinates);
+                update.setDouble(4, annualTurnover);
+                update.setString(5, fullName);
+                update.setInt(6, employeesCount);
+                update.setString(7, type);
+                update.setString(8, street);
+                update.setLong(9, xLocation);
+                update.setFloat(10, yLocation);
+                update.setFloat(11, zLocation);
+                update.setInt(12, id);
+                update.executeUpdate();
 
                 organizationTable.put(id, new Organization(id, name, new Coordinates(xCoordinates, yCoordinates),
                         creationDate, annualTurnover, fullName, employeesCount, OrganizationType.valueOf(type),
@@ -71,7 +104,7 @@ public class Update implements BaseCommand {
 //                if (!data[0].equals(null)) {
                 return new CommandExecute("Данные организации были успешно обновлены", true);
             }else{
-                return new CommandExecute("Организации с id_" + id + " не существует", false);
+                return new CommandExecute("Организации с id_" + id + " не существует или вы не являетесь создателем записи", false);
             }
 
         }catch (Exception e) {

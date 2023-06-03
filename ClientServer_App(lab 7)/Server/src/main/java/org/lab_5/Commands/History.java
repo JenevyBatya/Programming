@@ -5,16 +5,20 @@ import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class History implements BaseCommand{
     private String response = "";
+    public void setUserId(Integer userId) {
+
+    }
 
     private Hashtable<Integer, Organization> organizationTable;
 
     ArrayList<String> history;
-    public History(Hashtable organizationTable, ArrayList<String> history){
+    public History(Hashtable organizationTable, ArrayList<String> history, Connection connection){
         this.organizationTable = organizationTable;
         this.history=history;
     }

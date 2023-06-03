@@ -31,12 +31,12 @@ public class CommandsMode {
         this.socket = socket;
     }
 
-    public void executeCommand(BufferedReader input, PrintWriter output){
+    public void executeCommand(BufferedReader input, PrintWriter output) {
         CommandsManager cm = new CommandsManager();
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
         Hashtable<String, CommandWithDetails> withOrganizationData = cm.getWithOrganizationData();
-        Hashtable<String,CommandWithDetails> withOrganizationDetails = cm.getWithOrganizationDetails();
+        Hashtable<String, CommandWithDetails> withOrganizationDetails = cm.getWithOrganizationDetails();
         ConsoleLog consoleLog = new ConsoleLog();
         CommandExecute commandExecute = null;
         Request inputObject;
@@ -44,26 +44,25 @@ public class CommandsMode {
         ReceptionReader receptionReader = new ReceptionReader();
         boolean newCommand = false;
 
-        while(true) {
+        while (true) {
 
             try {
                 consoleLog.consoleResp("Введите команду");
                 String[] command = sc.nextLine().split(" ");
-                if (command.length > 1){
-                    if (withOrganizationData.containsKey(command[0])){
+                if (command.length > 1) {
+                    if (withOrganizationData.containsKey(command[0])) {
                         commandExecute = withOrganizationData.get(command[0]).execute(command[1]);
 
                         //TODO
-                    }else if(withOrganizationDetails.containsKey(command[0])){
+                    } else if (withOrganizationDetails.containsKey(command[0])) {
                         commandExecute = withOrganizationDetails.get(command[0]).execute(command[1]);
 
-                    } else{
-
+                    } else {
                         commandExecute = commandsMap.get(command[0]).execute(command[1]);
                     }
-                    if (commandExecute.isSuccess()){
+                    if (commandExecute.isSuccess()) {
                         //send data
-                        inputObject = new Request(command[0],command[1],commandExecute.getResponse());
+                        inputObject = new Request(command[0], command[1], commandExecute.getResponse());
                         String json = objectMapper.writeValueAsString(inputObject);
                         output.println(json);
                         String message = input.readLine();
@@ -71,47 +70,48 @@ public class CommandsMode {
                         consoleLog.consoleRespCommand(commandExecute1);
 
 
-                    }else{
-                        consoleLog.consoleRespCommand(commandExecute);}
+                    } else {
+                        consoleLog.consoleRespCommand(commandExecute);
+                    }
 
-                }else{
-                    if (withOrganizationData.containsKey(command[0])){
+                } else {
+                    if (withOrganizationData.containsKey(command[0])) {
                         commandExecute = withOrganizationData.get(command[0]).execute();
 
 
                         //TODO
-                    }else if(withOrganizationDetails.containsKey(command[0])){
+                    } else if (withOrganizationDetails.containsKey(command[0])) {
                         commandExecute = withOrganizationDetails.get(command[0]).execute();
 
-                    }
-                    else{
+                    } else {
                         commandExecute = commandsMap.get(command[0]).execute();
                     }
 
-                    if (commandExecute.isSuccess()){
+                    if (commandExecute.isSuccess()) {
                         //send data
-                        inputObject = new Request(command[0],null,commandExecute.getResponse());
+                        inputObject = new Request(command[0], null, commandExecute.getResponse());
                         String json = objectMapper.writeValueAsString(inputObject);
                         output.println(json);
                         String message = input.readLine();
+                        System.out.println();
                         CommandExecute commandExecute1 = receptionReader.read(message);
                         consoleLog.consoleRespCommand(commandExecute1);
-                        if (command[0].equals(Exit.getName())){
+                        if (command[0].equals(Exit.getName())) {
                             break;
                         }
 
-                    }else{
-                        consoleLog.consoleRespCommand(commandExecute);}
+                    } else {
+                        consoleLog.consoleRespCommand(commandExecute);
+                    }
 
                 }
-            }catch (NullPointerException | IOException e){
+            } catch (NullPointerException | IOException e) {
                 consoleLog.consoleResp("Неизвестная команда. Для справки по всем доступным командам пропишите help");
-            }
-            catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 break;
             }
         }
 
-        }
+    }
 
 }

@@ -4,13 +4,14 @@ import org.lab_5.CommandExecute;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class Show implements BaseCommand{
 
 
     private Hashtable<Integer, Organization> organizationTable;
-    public Show(Hashtable organizationTable){
+    public Show(Hashtable organizationTable, Connection connection){
         this.organizationTable = organizationTable;
     }
     private static String name = "show";
@@ -34,6 +35,9 @@ public class Show implements BaseCommand{
             return new CommandExecute("Коллекция в данный момент не содержит в себе объектов",false);
         }
         return new CommandExecute(response,true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }

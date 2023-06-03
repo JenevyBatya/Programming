@@ -6,12 +6,13 @@ import org.lab_5.Models.Organization;
 import org.lab_5.Models.OrganizationType;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class MinByType implements BaseCommand{
     private String response = "";
     private Hashtable<Integer, Organization> organizationTable;;
-    public MinByType(Hashtable organizationTable){
+    public MinByType(Hashtable organizationTable, Connection connection){
         this.organizationTable = organizationTable;
     }
     private static String name = "min_by_type";
@@ -38,6 +39,9 @@ public class MinByType implements BaseCommand{
             return new CommandExecute(response,false);
         }
         return new CommandExecute(response,true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }

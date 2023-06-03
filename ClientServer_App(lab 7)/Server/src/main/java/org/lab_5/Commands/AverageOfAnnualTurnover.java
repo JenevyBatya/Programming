@@ -5,12 +5,13 @@ import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
 
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class AverageOfAnnualTurnover implements BaseCommand {
     private Hashtable<Integer, Organization> organizationTable;
 
-    public AverageOfAnnualTurnover(Hashtable<Integer, Organization> organizationTable) {
+    public AverageOfAnnualTurnover(Hashtable<Integer, Organization> organizationTable, Connection connection) {
         this.organizationTable = organizationTable;
     }
 
@@ -37,6 +38,9 @@ public class AverageOfAnnualTurnover implements BaseCommand {
 //        System.out.println(averageOfAnnualTurnover);
 
         return new CommandExecute(String.valueOf(averageOfAnnualTurnover), true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }

@@ -5,16 +5,27 @@ import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Hashtable;
 import java.util.Scanner;
 
 public class ReplaceIfGreater implements BaseCommand {
     ConsoleLog consoleLog = new ConsoleLog();
     private Hashtable<Integer, Organization> organizationTable;
-    ;
+    private Integer userId;
+    private Connection connection;
 
-    public ReplaceIfGreater(Hashtable organizationTable) {
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+
+    public ReplaceIfGreater(Hashtable organizationTable, Connection connection) {
         this.organizationTable = organizationTable;
+        this.connection = connection;
     }
 
     private static String name = "replace_if_greater";
@@ -32,12 +43,20 @@ public class ReplaceIfGreater implements BaseCommand {
     }
 
 
-    public CommandExecute execute(Request o) {
+    public CommandExecute execute(Request o) throws SQLException {
         int id = Integer.parseInt(o.getArg());
         String[] data = o.getData().split(" ");
 
-        if (!organizationTable.containsKey(id)) {
-            response = "Организации с id_" + id + "не существует";
+        String sql1 = "select annulalTurnover,employeeCount  from organization where (id=? and user_id=?)";
+        PreparedStatement idToDelete = connection.prepareStatement(sql1);
+        idToDelete.setInt(1, id);
+        idToDelete.setInt(2, userId);
+        ResultSet resultSet = idToDelete.executeQuery();
+
+
+
+        if (!resultSet.next()) {
+            response = "Организации с id_" + id + "не существует или вы не являетесь создателем записи";
 
         } else {
 
@@ -45,7 +64,14 @@ public class ReplaceIfGreater implements BaseCommand {
             if (data[0].equals("annualTurnover")) {
                 while (true) {
                     Double updateD = Double.parseDouble(data[1]);
-                    if (organizationTable.get(id).getAnnualTurnover() <= updateD) {
+
+                    if (resultSet.getDouble("annualTurnover") <= updateD) {
+                        String changeAnnualTurnover_sql = "update organization set annulaTurnover = ? where (id=? and user_id=?)";
+                        PreparedStatement changeAnnualTurnover = connection.prepareStatement(changeAnnualTurnover_sql);
+                        changeAnnualTurnover.setDouble(1,updateD);
+                        changeAnnualTurnover.setInt(2, id);
+                        changeAnnualTurnover.setInt(3, userId);
+                        changeAnnualTurnover.executeUpdate();
                         organizationTable.get(id).setAnnualTurnover(updateD);
                         response = "Значение annualTurnover было успешно заменено";
                         success = true;
@@ -59,7 +85,13 @@ public class ReplaceIfGreater implements BaseCommand {
             } else if (data[0].equals("employeeCount")) {
                 while (true) {
                     Integer updateInt = Integer.parseInt(data[1]);
-                    if (organizationTable.get(id).getEmployeesCount() <= updateInt) {
+                    String changeEmployessCount_sql = "update organization set employeesCount = ? where (id=? and user_id=?)";
+                    PreparedStatement changeEmployessCount = connection.prepareStatement(changeEmployessCount_sql);
+                    changeEmployessCount.setInt(1,updateInt);
+                    changeEmployessCount.setInt(2, id);
+                    changeEmployessCount.setInt(3, userId);
+                    changeEmployessCount.executeUpdate();
+                    if (resultSet.getInt("employeesCount") <= updateInt) {
                         organizationTable.get(id).setEmployeesCount(updateInt);
                         response = "Значение employeeCount было успешно заменено";
                         success = true;
@@ -72,7 +104,7 @@ public class ReplaceIfGreater implements BaseCommand {
                 }
             }
         }
-        return new CommandExecute(response,success);
+        return new CommandExecute(response, success);
 
     }
 }

@@ -10,6 +10,8 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -17,7 +19,12 @@ import java.util.List;
 public class ExecuteScript implements BaseCommand{
     private Hashtable<Integer, Organization> organizationTable;;
     private ArrayList<String> history = new ArrayList<>();
-    public ExecuteScript(Hashtable organizationTable, ArrayList<String> history){
+    private Integer userId;
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+    public ExecuteScript(Hashtable organizationTable, ArrayList<String> history, Connection connection){
         this.history=history;
         this.organizationTable = organizationTable;
     }
@@ -35,7 +42,7 @@ public class ExecuteScript implements BaseCommand{
     private String response = "";
 
     public CommandExecute execute(Request o) {
-        CommandsManager cm = new CommandsManager(organizationTable, history);
+        CommandsManager cm = new CommandsManager(organizationTable, history,null);
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
         //TODO
@@ -68,7 +75,7 @@ public class ExecuteScript implements BaseCommand{
             }return new CommandExecute(response,true);
         }catch (IOException e){
             return new CommandExecute("Файл не найден",false);
-        }catch (ArrayIndexOutOfBoundsException e) {
+        }catch (ArrayIndexOutOfBoundsException | SQLException e) {
             return new CommandExecute("Неправильный синтаксис команды. Укажите полный путь до файла после команды",false);
         }
     }

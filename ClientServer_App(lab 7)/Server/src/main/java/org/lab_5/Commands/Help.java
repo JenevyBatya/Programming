@@ -5,6 +5,7 @@ import org.lab_5.CommandsManager;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class Help implements BaseCommand {
@@ -12,7 +13,7 @@ public class Help implements BaseCommand {
     private Hashtable<Integer, Organization> organizationTable;
     ;
 
-    public Help(Hashtable organizationTable) {
+    public Help(Hashtable organizationTable, Connection connection) {
         this.organizationTable = organizationTable;
     }
 
@@ -30,10 +31,13 @@ public class Help implements BaseCommand {
     public String getDescription() {
         return description;
     }
+    public void setUserId(Integer userId) {
+
+    }
 
 
     public CommandExecute execute(Request o) {
-        CommandsManager commandsManager = new CommandsManager(organizationTable, null);
+        CommandsManager commandsManager = new CommandsManager(organizationTable, null,null);
         commandsManager.collectionOfCommands();
 
 

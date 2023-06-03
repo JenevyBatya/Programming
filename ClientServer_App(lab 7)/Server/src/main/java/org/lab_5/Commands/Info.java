@@ -5,13 +5,14 @@ import org.lab_5.ConsoleLog;
 import org.lab_5.Models.Organization;
 import org.lab_5.Request;
 
+import java.sql.Connection;
 import java.util.Hashtable;
 
 public class Info implements BaseCommand{
 
     private String response;
     private Hashtable<Integer, Organization> organizationTable;;
-    public Info(Hashtable organizationTable){
+    public Info(Hashtable organizationTable, Connection connection){
         this.organizationTable = organizationTable;
     }
 
@@ -33,6 +34,9 @@ public class Info implements BaseCommand{
 
 
         return new CommandExecute(response,true);
+    }
+    public void setUserId(Integer userId) {
+
     }
 
 }
