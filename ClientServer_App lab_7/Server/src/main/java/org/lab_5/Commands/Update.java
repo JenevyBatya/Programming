@@ -70,17 +70,17 @@ public class Update implements BaseCommand {
                 Updater updater = new Updater();
 
                 name = (String) updater.compare(data[0], resultSet.getString("name"));
-                xCoordinates = (int) updater.compare(Integer.parseInt(data[1]), resultSet.getInt("coordinateX"));
-                yCoordinates = (Long) updater.compare(Long.parseLong(data[2]), resultSet.getLong("coordinateY"));
-                annualTurnover = (Double) updater.compare(Double.parseDouble(data[3]), resultSet.getDouble("annualTurnover"));
+                xCoordinates = (int) updater.compare(data[1], resultSet.getInt("coordinateX"));
+                yCoordinates = (Long) updater.compare(data[2], resultSet.getLong("coordinateY"));
+                annualTurnover = (Double) updater.compare(data[3], resultSet.getDouble("annualTurnover"));
                 creationDate = resultSet.getDate("creationDate").toLocalDate();
                 fullName = (String) updater.compare(data[4], resultSet.getString("fullName"));
-                employeesCount = (Integer) updater.compare(Integer.parseInt(data[5]), resultSet.getInt("employeesCount"));
+                employeesCount = (Integer) updater.compare(data[5], resultSet.getInt("employeesCount"));
                 type = (String) updater.compare(data[6], resultSet.getString("type"));
                 street = (String) updater.compare(data[7], resultSet.getString("street"));
-                xLocation = (Long) updater.compare(Long.parseLong(data[8]), resultSet.getLong("locationX"));
-                yLocation = (Float) updater.compare(Float.parseFloat(data[9]), resultSet.getFloat("locationY"));
-                zLocation = (float) updater.compare(Float.parseFloat(data[10]), resultSet.getFloat("locationZ"));
+                xLocation = (Long) updater.compare(data[8], resultSet.getLong("locationX"));
+                yLocation = (Float) updater.compare(data[9], resultSet.getFloat("locationY"));
+                zLocation = (float) updater.compare(data[10], resultSet.getFloat("locationZ"));
                 String sql1 = "update organization set name=?, coordinateX=?, coordinateY=?, annualTurnover=?," +
                         " fullName=?, employeesCount=?, type=?, street=?, locationX=?, locationY=?, locationZ=? where id=?";
                 PreparedStatement update = connection.prepareStatement(sql1);

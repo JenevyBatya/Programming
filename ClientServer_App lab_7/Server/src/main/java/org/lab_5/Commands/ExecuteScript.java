@@ -20,6 +20,7 @@ public class ExecuteScript implements BaseCommand{
     private Hashtable<Integer, Organization> organizationTable;;
     private ArrayList<String> history = new ArrayList<>();
     private Integer userId;
+    private Connection connection;
 
     public void setUserId(Integer userId) {
         this.userId = userId;
@@ -27,6 +28,7 @@ public class ExecuteScript implements BaseCommand{
     public ExecuteScript(Hashtable organizationTable, ArrayList<String> history, Connection connection){
         this.history=history;
         this.organizationTable = organizationTable;
+        this.connection=connection;
     }
     private static String name = "execute_script";
 
@@ -42,7 +44,7 @@ public class ExecuteScript implements BaseCommand{
     private String response = "";
 
     public CommandExecute execute(Request o) {
-        CommandsManager cm = new CommandsManager(organizationTable, history,null);
+        CommandsManager cm = new CommandsManager(organizationTable, history,connection);
         cm.collectionOfCommands();
         Hashtable<String, BaseCommand> commandsMap = cm.getCommandsTable();
         //TODO
