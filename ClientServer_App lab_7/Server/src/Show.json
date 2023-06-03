@@ -1,0 +1,69 @@
+[
+	{
+		"id": 1,
+		"name": "Грегори и сыновья",
+		"coordinates": {
+      "x": 700,
+      "y": 20.0
+    },
+		 "creationDate": "2022-05-10",
+		 "annualTurnover": 250000,
+		 "fullName": "Грегори и сыновья Адама",
+		 "employeesCount": 3,
+		 "type": "COMMERCIAL",
+		 "postalAddress": {
+		 	"street": "Проспект Грегори Хауса",
+		 	"town": {
+		 		"x": 786,
+		 		"y": 345345,
+		 		"z": -67
+		 	}
+		 }
+	},
+	{
+		"id": 12,
+		"name": "Прекрасный Грегори Хаус",
+		"coordinates": {
+      "x": 700,
+      "y": 20.0
+    },
+		 "creationDate": "2022-08-11",
+		 "annualTurnover": 2980,
+		 "fullName": "Прекрасный Грегори Хаус и три интерна",
+		 "employeesCount": 4,
+		 "type": "GOVERNMENT",
+		 "postalAddress": {
+		 	"street": "Проспект Грегори Хауса",
+		 	"town": {
+		 		"x": 786,
+		 		"y": 345345,
+		 		"z": -67
+		 	}
+		 }
+	},
+		{
+		"id": 45,
+		"name": "Queen",
+		"coordinates": {
+      "x": 700,
+      "y": 20.0
+    },
+		 "creationDate": "1998-09-11",
+		 "annualTurnover": 345678,
+		 "fullName": "Queen",
+		 "employeesCount": 4,
+		 "type": "PUBLIC",
+		 "postalAddress": {
+		 	"street": "Проспект Богемской Рапсодии",
+		 	"town": {
+		 		"x": 786,
+		 		"y": 345345,
+		 		"z": -67
+		 	}
+		 }
+	}
+
+
+
+
+]
