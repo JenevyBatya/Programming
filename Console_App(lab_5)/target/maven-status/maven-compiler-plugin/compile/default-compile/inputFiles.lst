@@ -1,31 +1,33 @@
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\MinByType.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\OrganizationRegistration.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Models\Organization.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\CommandsMode.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Main.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Models\Coordinates.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\RemoveLower.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\ReplaceIfGreater.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Info.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Save.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\History.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Exit.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Insert.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\BaseCommand.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Clear.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Import.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Models\Address.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\RandomNumber.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Models\Location.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\RemoveKey.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\AverageOfAnnualTurnover.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Checker.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\ExecuteScript.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\test.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Models\OrganizationType.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Show.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Help.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\CommandsManager.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Update.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\Commands\PrintAscending.java
-C:\Users\theal\Desktop\טעלמ\Ïנמדא טעלמ\Console_App(lab_5)\src\main\java\org\lab_5\FileImportMode.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\OrganizationRegistration.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Models\Coordinates.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Exit.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\History.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\ExecuteScript.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Help.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\RemoveKey.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Models\Location.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\PrintAscending.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Insert.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\RemoveLower.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\ConsoleLog.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\ReplaceIfGreater.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\test.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\CommandExecute.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Clear.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\AverageOfAnnualTurnover.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Import.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\MinByType.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Checker.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Main.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Models\OrganizationType.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Info.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Save.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\CommandsMode.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\BaseCommand.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Models\Address.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Show.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\FileImportMode.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Commands\Update.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\RandomNumber.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\CommandsManager.java
+C:\Users\theal\Desktop\ITMO\Programming\Console_App(lab_5)\src\main\java\org\lab_5\Models\Organization.java

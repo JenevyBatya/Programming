@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bd43770d-9fee-49a4-a76f-cab849a68987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Console_App(lab_5)/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/src/main/java/org/lab_5/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Console_App(lab_5)/src/main/java/org/lab_5/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/Lab_5.1-1-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/Lab_5.1-1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Console_App(lab_5)/target/Lab_5.1-1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/classes/org/lab_5/SystemOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/classes/org/lab_5/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Console_App(lab_5)/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2S9OGvUGLXfAMnaaWQYM36FSTzR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/theal/Desktop/ITMO/Programming/ClientServer_App_lab_6",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/theal/Desktop/ITMO/Programming/temp/src/main/java/org/lab5/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd43770d-9fee-49a4-a76f-cab849a68987" name="Changes" comment="" />
+      <created>1688555238985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688555238985</updated>
+      <workItem from="1688555240020" duration="2035000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/lab_5/Main.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
